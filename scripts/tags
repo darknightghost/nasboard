@@ -1,0 +1,14 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+DeviceNotFoundError	NasBoard/__init__.py	/^class DeviceNotFoundError(Exception):$/;"	kind:c	line:7	language:Python	inherits:Exception
+NasBoard	NasBoard/__init__.py	/^class NasBoard:$/;"	kind:c	line:10	language:Python	inherits:
+__get_dev_paths	NasBoard/__init__.py	/^    def __get_dev_paths(self):$/;"	kind:m	line:43	language:Python	class:NasBoard	file:	access:private
+close	NasBoard/__init__.py	/^    def close(self):$/;"	kind:m	line:40	language:Python	class:NasBoard	access:public
+handshake	NasBoard/__init__.py	/^    def handshake(self):$/;"	kind:m	line:52	language:Python	class:NasBoard	access:public
+open	NasBoard/__init__.py	/^    def open(self):$/;"	kind:m	line:11	language:Python	class:NasBoard	access:public
+os	NasBoard/__init__.py	/^import os$/;"	kind:i	line:5	language:Python
+serial	NasBoard/__init__.py	/^import serial$/;"	kind:i	line:4	language:Python
