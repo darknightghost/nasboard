@@ -80,7 +80,7 @@ XBPSTACKTOP	rom/nas/STARTUP.A51	/^XBPSTACKTOP     EQU     0xFFFF +1   ; default 
 XDATALEN	rom/nas/STARTUP.A51	/^XDATALEN        EQU     0      $/;"	kind:d	line:38	language:Asm
 XDATALOOP	rom/nas/STARTUP.A51	/^XDATALOOP:      MOVX    @DPTR,A$/;"	kind:l	line:148	language:Asm
 XDATASTART	rom/nas/STARTUP.A51	/^XDATASTART      EQU     0     $/;"	kind:d	line:34	language:Asm
-__get_dev_paths	scripts/NasBoard/__init__.py	/^    def __get_dev_paths(self):$/;"	kind:m	line:45	language:Python	class:NasBoard	file:	access:private
+__get_dev_paths	scripts/NasBoard/__init__.py	/^    def __get_dev_paths(self):$/;"	kind:m	line:47	language:Python	class:NasBoard	file:	access:private
 _tick_cb_info	rom/nas/clock.h	/^typedef struct  _tick_cb_info {$/;"	kind:s	line:26	language:C++
 _tick_cb_info::callback	rom/nas/clock.h	/^    void                        (*callback)();$/;"	kind:m	line:31	language:C++	struct:_tick_cb_info	access:public
 _tick_cb_info::current_tick	rom/nas/clock.h	/^    u32                         current_tick;$/;"	kind:m	line:30	language:C++	struct:_tick_cb_info	access:public
@@ -95,7 +95,7 @@ ac_pin	rom/nas/ac.c	/^sbit    ac_pin          = P1 ^ 0;$/;"	kind:v	line:22	langu
 bool	rom/nas/common.h	/^typedef u8              bool;$/;"	kind:t	line:30	language:C++
 callback	rom/nas/clock.h	/^    void                        (*callback)();$/;"	kind:m	line:31	language:C++	struct:_tick_cb_info	access:public
 cb_list	rom/nas/clock.c	/^static ptick_cb_info_t      cb_list;$/;"	kind:v	line:23	language:C	file:
-clear	scripts/NasBoard/__init__.py	/^    def clear(self):$/;"	kind:m	line:87	language:Python	class:NasBoard	access:public
+clear	scripts/NasBoard/__init__.py	/^    def clear(self):$/;"	kind:m	line:89	language:Python	class:NasBoard	access:public
 clear_all	rom/nas/command.c	/^static void clear_all()$/;"	kind:f	line:32	language:C	file:
 clock_continue	rom/nas/clock.c	/^void clock_continue()$/;"	kind:f	line:50	language:C
 clock_continue	rom/nas/clock.h	/^void        clock_continue();$/;"	kind:p	line:36	language:C++	signature:()
@@ -109,7 +109,7 @@ clock_pause	rom/nas/clock.c	/^void clock_pause()$/;"	kind:f	line:55	language:C
 clock_pause	rom/nas/clock.h	/^void        clock_pause();$/;"	kind:p	line:37	language:C++	signature:()
 clock_reg_on_tick	rom/nas/clock.c	/^void clock_reg_on_tick(ptick_cb_info_t p_cb_info)$/;"	kind:f	line:60	language:C	signature:(ptick_cb_info_t p_cb_info)
 clock_reg_on_tick	rom/nas/clock.h	/^void        clock_reg_on_tick(ptick_cb_info_t p_cb_info);$/;"	kind:p	line:38	language:C++	signature:(ptick_cb_info_t p_cb_info)
-close	scripts/NasBoard/__init__.py	/^    def close(self):$/;"	kind:m	line:42	language:Python	class:NasBoard	access:public
+close	scripts/NasBoard/__init__.py	/^    def close(self):$/;"	kind:m	line:44	language:Python	class:NasBoard	access:public
 color	rom/nas/test.c	/^static u8   color = COLOR_RED;$/;"	kind:v	line:41	language:C	file:
 colors	rom/nas/light.c	/^static u8   colors[8];$/;"	kind:v	line:28	language:C	file:
 command_exec	rom/nas/command.c	/^void command_exec(u8 cmd)$/;"	kind:f	line:81	language:C	signature:(u8 cmd)
@@ -118,8 +118,8 @@ current_microsec	rom/nas/clock.c	/^static data volatile u32    current_microsec;
 current_tick	rom/nas/clock.h	/^    u32                         current_tick;$/;"	kind:m	line:30	language:C++	struct:_tick_cb_info	access:public
 false	rom/nas/common.h	33;"	kind:d	line:33	language:C++
 get_ac_stat	rom/nas/command.c	/^static void get_ac_stat()$/;"	kind:f	line:65	language:C	file:
-get_ac_stat	scripts/NasBoard/__init__.py	/^    def get_ac_stat(self):$/;"	kind:m	line:67	language:Python	class:NasBoard	access:public
-handshake	scripts/NasBoard/__init__.py	/^    def handshake(self):$/;"	kind:m	line:54	language:Python	class:NasBoard	access:public
+get_ac_stat	scripts/NasBoard/__init__.py	/^    def get_ac_stat(self):$/;"	kind:m	line:69	language:Python	class:NasBoard	access:public
+handshake	scripts/NasBoard/__init__.py	/^    def handshake(self):$/;"	kind:m	line:56	language:Python	class:NasBoard	access:public
 if_test	rom/nas/test.c	/^bool if_test()$/;"	kind:f	line:30	language:C
 if_test	rom/nas/test.h	/^bool    if_test();$/;"	kind:p	line:23	language:C++	signature:()
 index	rom/nas/test.c	/^static u8   index = 0;$/;"	kind:v	line:40	language:C	file:
@@ -132,8 +132,8 @@ light_index	rom/nas/light.c	/^static u8 light_index = 0;$/;"	kind:v	line:59	lang
 light_init	rom/nas/light.c	/^void light_init()$/;"	kind:f	line:31	language:C
 light_init	rom/nas/light.h	/^void    light_init();$/;"	kind:p	line:28	language:C++	signature:()
 light_off	rom/nas/command.c	/^static void light_off(u8 param)$/;"	kind:f	line:56	language:C	file:	signature:(u8 param)
-light_off	scripts/NasBoard/__init__.py	/^    def light_off(self, index):$/;"	kind:m	line:109	language:Python	class:NasBoard	access:public
-light_on	scripts/NasBoard/__init__.py	/^    def light_on(self, color, index):$/;"	kind:m	line:94	language:Python	class:NasBoard	access:public
+light_off	scripts/NasBoard/__init__.py	/^    def light_off(self, index):$/;"	kind:m	line:111	language:Python	class:NasBoard	access:public
+light_on	scripts/NasBoard/__init__.py	/^    def light_on(self, color, index):$/;"	kind:m	line:96	language:Python	class:NasBoard	access:public
 light_ready	rom/nas/light.c	/^sbit    light_ready         = P0 ^ 0;$/;"	kind:v	line:22	language:C
 light_ready_on	rom/nas/light.c	/^void light_ready_on()$/;"	kind:f	line:39	language:C
 light_ready_on	rom/nas/light.h	/^void    light_ready_on();$/;"	kind:p	line:29	language:C++	signature:()

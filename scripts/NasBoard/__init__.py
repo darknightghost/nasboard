@@ -31,13 +31,15 @@ class NasBoard:
                     self.serial.close()
                     continue
 
-                break
+                return
 
-            except SerialException:
+            except serial.SerialException as e:
+                if  self.handshake():
+                    return
+
                 continue
 
-        else:
-            raise DeviceNotFoundError()
+        raise DeviceNotFoundError()
 
     def close(self):
         self.serial.close()
@@ -46,7 +48,7 @@ class NasBoard:
         files = os.listdir("/dev")
         ret = []
         for f in files:
-            if "/ttyUSB" in f:
+            if "ttyUSB" in f:
                 ret.append(os.path.join("/dev", f))
 
         return ret
@@ -72,13 +74,13 @@ class NasBoard:
             raise DeviceNotFoundError()
 
         result = self.serial.read(1)
-        if len(resulf) == 0:
+        if len(result) == 0:
             raise DeviceNotFoundError()
 
         if result[0] == 0:
             return False
 
-        elif resulf[0] == 1:
+        elif result[0] == 1:
             return True
 
         else:
@@ -86,7 +88,7 @@ class NasBoard:
 
     def clear(self):
         try:
-            self.serial.write('\x10')
+            self.serial.write(b'\x10')
 
         except serial.SerialTimeoutException:
             raise DeviceNotFoundError()
