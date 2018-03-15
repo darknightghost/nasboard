@@ -58,3 +58,8 @@ dkms.conf
 *.hex
 *.HEX
 *.__i
+__pycache__/*
+*.pyc
+tags
+.directory
+*.swp
