@@ -1,0 +1,9 @@
+"clock.obj",
+"light.obj",
+"main.obj",
+"serial.obj",
+"test.obj",
+"ac.obj",
+"command.obj" 
+TO "nas" 
+RAMSIZE(256) 
