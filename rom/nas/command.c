@@ -20,6 +20,15 @@
 #include "ac.h"
 #include "serial.h"
 
+static ret_magic()
+{
+    u8 ret = MAGIC;
+    
+    serial_send(&ret, 1);
+    
+    return;
+}
+
 static void clear_all()
 {
     int i;
@@ -59,10 +68,9 @@ static void get_ac_stat()
     
     if(ac_on()) {
         ret = 0x01;
-        
+
     } else {
         ret = 0x00;
-        
     }
         
     serial_send(&ret, 1);
@@ -73,6 +81,10 @@ static void get_ac_stat()
 void command_exec(u8 cmd)
 {
     switch(CMD(cmd)) {
+        case CMD_MAGIC:
+            ret_magic();
+            break;
+        
         case CMD_CLEAR:
             clear_all();
             break;

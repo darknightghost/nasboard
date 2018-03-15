@@ -26,6 +26,10 @@
 #define CMD(val)    (((val) & CMD_MASK) >> 4)
 #define PARAM(val)  ((val) & PARAM_MASK)
 
+#define MAGIC           0xAB
+
+#define CMD_MAGIC       0x00
+
 /*
  * Command format:
  *  |7         4|3         0|

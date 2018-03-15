@@ -5,7 +5,7 @@
 <h2>Tool Versions:</h2>
 IDE-Version: ¦ÌVision V5.11.2.0
 Copyright (C) 2014 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: 1 darkn, 1, LIC=58E2Z-JITJB-LZHW3-ACKLD-6MJ39-4E9G1
+License Information: Siyuan Wang, founder, LIC=65S63-AR4LL-KWZ2K-ZK23W-UHXES-QU8YH
  
 Tool Versions:
 Toolchain:       PK51 Prof. Developers Kit  Version: 9.53.0.0
@@ -18,15 +18,14 @@ Hex Converter:   OH51.exe V2.7.0.0
 CPU DLL:         S8051.DLL V3.95.0.0
 Dialog DLL:      DP51.DLL V2.62.0.1 
 <h2>Project:</h2>
-D:\projects\Embedded\nas\nas.uvproj
+Z:\home\darknightghost\project\nasboard\rom\nas\nas.uvproj
 Project File Date:  03/15/2018
 
 <h2>Output:</h2>
 Build target 'nas'
-compiling main.c...
-compiling serial.c...
-compiling test.c...
 compiling command.c...
+command.c(1): warning C500: LICENSE ERROR (R207(3): REGISTRY READ ERROR)
+command.c(30): warning C290: missing return value
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?CLOCK_GET_MICROSEC?CLOCK
@@ -40,9 +39,11 @@ linking...
     SEGMENT: ?PR?_SERIAL_SEND?SERIAL
     CALLER1: ?PR?ON_SERIAL?MAIN
     CALLER2: ?C_C51STARTUP
-Program Size: data=69.0 xdata=0 code=2275
+Program Size: data=69.0 xdata=0 code=2297
 creating hex file from "nas"...
-"nas" - 0 Error(s), 5 Warning(s).
+"nas" - 0 Error(s), 7 Warning(s).
 </pre>
 </body>
 </html>
+eating hex file from "nas"...
+"nas" - 0 Error(s), 8 Warning(s).
