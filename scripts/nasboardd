@@ -5,14 +5,28 @@ import os
 import NasBoard
 import time
 
+DEVS = [
+        "/sys/devices/pci0000:00/0000:00:1c.1/0000:02:00.0/ata4/host3/target3:0:0",
+        "/sys/devices/pci0000:00/0000:00:1c.1/0000:02:00.0/ata3/host2/target2:0:0",
+        "/sys/devices/pci0000:00/0000:00:1c.1/0000:02:00.0/ata6/host5/target5:0:0",
+        "/sys/devices/pci0000:00/0000:00:1c.1/0000:02:00.0/ata5/host4/target4:0:0",
+        "/sys/devices/pci0000:00/0000:00:1c.1/0000:02:00.0/ata6/host5/target5:1:0",
+        "/sys/devices/pci0000:00/0000:00:1c.1/0000:02:00.0/ata6/host5/target5:2:0",
+        "/sys/devices/pci0000:00/0000:00:1c.1/0000:02:00.0/ata6/host5/target5:3:0",
+        "/sys/devices/pci0000:00/0000:00:1c.1/0000:02:00.0/ata6/host5/target5:4:0"
+        ]
+
 def main():
     board = NasBoard.NasBoard()
     open_board(board)
 
     while True:
         try:
+            #Power
             if not board.get_ac_stat():
                 os.system("systemctl poweroff")
+
+            refresh_dev(board)
 
             time.sleep(5)
 
@@ -36,5 +50,26 @@ def open_board(b):
 
         except Exception:
             pass
+
+def get_dev_map():
+    devs = os.listdir("/sys/block/")
+    ret = {}
+
+    for d in dev:
+        path = os.path.join("/sys/block/", d)
+        if os.path.islink(path):
+            target = os.path.realpath(path)
+            for i in range(0, len(DEVS)):
+                if DEVS[i] in target:
+                    ret[d] = i
+                    break
+
+    return ret
+
+def refresh_dev(board):
+    dev_dict = get_dev_map()
+    board.clear()
+    for k in dev_dict.keys():
+        board.light_on(board.RED, dev_dict[k])
 
 exit(main())
