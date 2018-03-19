@@ -17,6 +17,7 @@ class NasBoard:
             raise DeviceNotFoundError()
 
         for p in path_list:
+            print("a")
             try:
                 self.serial = serial.Serial(port = p,
                         baudrate = 9600,
