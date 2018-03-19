@@ -1,2 +1,40 @@
-#! /usr/bin/env pathon3
+#! /usr/bin/env python3
 # -*- coding: utf-8 -*-
+
+import os
+import NasBoard
+import time
+
+def main():
+    board = NasBoard.NasBoard()
+    open_board(board)
+
+    while True:
+        try:
+            if not board.get_ac_stat():
+                os.system("systemctl poweroff")
+
+            time.sleep(5)
+
+        except Exception:
+            board.close()
+            open_board(board)
+
+    return 0
+
+def open_board(b):
+    try:
+        b.close()
+
+    except Exception:
+        pass
+
+    while True:
+        try:
+            b.open()
+            break
+
+        except Exception:
+            pass
+
+exit(main())
